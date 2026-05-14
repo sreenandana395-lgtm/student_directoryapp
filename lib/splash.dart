@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:student_directoryapp/studentdirectory.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});

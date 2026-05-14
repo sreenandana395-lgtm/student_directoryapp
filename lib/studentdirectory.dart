@@ -43,7 +43,7 @@ class _StudentdirectoryState extends State<Studentdirectory> {
               decoration: InputDecoration(hintText:"gender"),
               items:
                ['MALE','FEMALE']
-               .map((e) => DropdownMenuItem( value :e child: Text(e)))
+               .map((e) => DropdownMenuItem( value :e, child: Text(e)))
                .toList(),
                onChanged: (value) {
                  setState(() {
@@ -55,7 +55,7 @@ class _StudentdirectoryState extends State<Studentdirectory> {
               SizedBox(height: 5),
               ElevatedButton(
                 onPressed: () {
-                (doc.id, namecontroller.text, _selectedgender!,classconntroller.text,phonecontroller.text,context)
+                (doc.id, namecontroller.text, _selectedgender!,classconntroller.text,phonecontroller.text,context);
               },
               child: Text("UPDATE"),
               )
@@ -70,9 +70,9 @@ class _StudentdirectoryState extends State<Studentdirectory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.pink,
         centerTitle: true,
         title: Text(
           "STUDENT DIRECTORY",
@@ -134,7 +134,7 @@ class _StudentdirectoryState extends State<Studentdirectory> {
                     SizedBox(height: 15),
                     Align(alignment: Alignment.topLeft, child: Text("CLASS")),
                     TextField(
-                      controller: classcontroller,
+                      controller: classconntroller,
                       decoration: InputDecoration(
                         hintText: "Class",
                         filled: true,
@@ -152,7 +152,7 @@ class _StudentdirectoryState extends State<Studentdirectory> {
                       child: Text("PHONE NUMBER"),
                     ),
                     TextField(
-                      controller: phonenumbercontroller,
+                      controller: phonecontroller,
                       decoration: InputDecoration(
                         hintText: "phone no",
                         filled: true,
@@ -170,8 +170,8 @@ class _StudentdirectoryState extends State<Studentdirectory> {
                         addstudent(
                           namecontroller.text,
                           _selectedgender!,
-                          classcontroller.text,
-                          phonenumbercontroller.text,
+                          classconntroller.text,
+                          phonecontroller.text,
                           context,
                         );
                       },
